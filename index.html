@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SupplyChain Sprint - Study Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-boxes-stacked"></i>
+                <h1>SupplyChain Sprint</h1>
+            </div>
+            <p class="subtitle">SCM Study Tracker Dashboard</p>
+        </header>
+
+        <main>
+            <!-- Dashboard Stats -->
+            <section class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="icon-wrapper total">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Total Topics</h3>
+                        <p id="total-count">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="icon-wrapper completed">
+                        <i class="fa-solid fa-check-circle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Completed</h3>
+                        <p id="completed-count">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="icon-wrapper pending">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Pending</h3>
+                        <p id="pending-count">0</p>
+                    </div>
+                </div>
+                <div class="stat-card progress-card">
+                    <div class="stat-header">
+                        <h3>Progress</h3>
+                        <span id="progress-percentage">0%</span>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Content Area -->
+            <div class="content-grid">
+                <!-- Add Task Form -->
+                <section class="add-task-section">
+                    <div class="section-header">
+                        <h2><i class="fa-solid fa-plus"></i> Add New Study Topic</h2>
+                    </div>
+                    <form id="add-task-form">
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" required>
+                                <option value="" disabled selected>Select Subject</option>
+                                <option value="Supply Chain Management">Supply Chain Management</option>
+                                <option value="IT & Analytics">IT & Analytics</option>
+                                <option value="Communication Skills">Communication Skills</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="topic">Topic Name</label>
+                            <input type="text" id="topic" placeholder="e.g., Inventory Models" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="priority">Priority</label>
+                                <select id="priority" required>
+                                    <option value="High">High</option>
+                                    <option value="Medium" selected>Medium</option>
+                                    <option value="Low">Low</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="deadline">Deadline</label>
+                                <input type="date" id="deadline" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="status">Status</label>
+                            <select id="status" required>
+                                <option value="Not Started" selected>Not Started</option>
+                                <option value="In Progress">In Progress</option>
+                                <option value="Completed">Completed</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn-primary">
+                            <i class="fa-solid fa-plus"></i> Add Topic
+                        </button>
+                    </form>
+                </section>
+
+                <!-- Task List -->
+                <section class="task-list-section">
+                    <div class="section-header">
+                        <h2><i class="fa-solid fa-list"></i> Study Topics</h2>
+                        <div class="filter-controls">
+                            <!-- Future feature: filter by status -->
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table id="task-table">
+                            <thead>
+                                <tr>
+                                    <th>Subject</th>
+                                    <th>Topic</th>
+                                    <th>Priority</th>
+                                    <th>Deadline</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="task-list-body">
+                                <!-- Tasks will be inserted here -->
+                            </tbody>
+                        </table>
+                        <div id="empty-state" class="empty-state hidden">
+                            <img src="https://cdni.iconscout.com/illustration/premium/thumb/empty-state-2130362-1800926.png"
+                                alt="No tasks" style="max-width: 150px; opacity: 0.8;">
+                            <p>No study topics added yet. Start by adding one!</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 SupplyChain Sprint. Keep Learning!</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
